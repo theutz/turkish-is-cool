@@ -2,7 +2,7 @@
 default:
   just --list
 
-# run commands against hubspot cli
+# run commands against hubspot cli with ARGS
 hs *args:
   pnpm exec hs {{args}}
 
@@ -32,8 +32,15 @@ sync: fetch upload
 
 alias s := sync
 
-# remove a file from the remote
+# remove a file from the remote PATH
 remove path:
   pnpm exec hs remove {{dest}}/{{path}}
 
 alias rm := remove
+
+# create a TYPE template
+create name type="template":
+  echo "function module react-app template vue-app webpack-serverless website-theme" \
+    | tr " " "\\0" \
+    | sk --read0 \
+    | xargs pnpm exec hs create {{type}} {{name}}
