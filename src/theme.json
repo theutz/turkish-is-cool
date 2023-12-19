@@ -1,0 +1,17 @@
+{
+  "label": "Turkish is Cool",
+  "author": {
+    "name": "Michael Utz",
+    "email": "michael@theutz.com",
+    "url": "https://theutz.com"
+	},
+  "responsive_breakpoints": [
+    {
+      "name": "mobile",
+      "mediaQuery": "@media (max-width: 767px)",
+      "previewWidth": {
+        "value": 477
+      }
+    }
+  ]
+}
