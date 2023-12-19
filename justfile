@@ -3,7 +3,7 @@ default:
   just --list
 
 # run commands against hubspot cli
-hs +args:
+hs *args:
   pnpm exec hs {{args}}
 
 source := "src"
