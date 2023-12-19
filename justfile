@@ -31,3 +31,9 @@ alias f := fetch
 sync: fetch upload
 
 alias s := sync
+
+# remove a file from the remote
+remove path:
+  pnpm exec hs remove {{dest}}/{{path}}
+
+alias rm := remove
