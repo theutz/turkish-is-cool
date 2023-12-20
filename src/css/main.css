@@ -1,2 +1,8 @@
-{% include '_reset.css' %}
-{% include '_normalize.css' %}
+{% include './_reset.css' %}
+{% include './_normalize.css' %}
+
+.main-header {
+  h1 {
+    color: red
+  }
+}
