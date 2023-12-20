@@ -39,8 +39,19 @@ remove path:
 alias rm := remove
 
 # create a TYPE template
-create name type="template":
-  echo "function module react-app template vue-app webpack-serverless website-theme" \
-    | tr " " "\\0" \
-    | sk --read0 \
-    | xargs pnpm exec hs create {{type}} {{name}}
+create:
+  #!/usr/bin/env zsh
+  types=(
+    template module function website-theme
+    react-app vue-app webpack-serverless
+  )
+  type="$(gum choose $types)"
+  dir="{{justfile_directory()}}/src"
+  if [[ $type == "template" ]]; then
+    dir="$dir/templates"
+    if gum confirm "Is this a partial?"; then
+      dir="$dir/partials"
+    fi
+  fi
+  name="$(gum input --placeholder "Name...")"
+  pnpm exec hs create $type $name $dir
