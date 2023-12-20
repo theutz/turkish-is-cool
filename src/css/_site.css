@@ -1,12 +1,15 @@
 :root {
   --primary-color: #e30a17;
-  --text-color: #e8e8e8;
+  --white: #e8e8e8;
+  --black: #222;
 }
 
 body {
   font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
   font-weight: normal;
   font-size: 16px;
+  color: var(--black);
+  background-color: var(--white);
 }
 
 .container {
@@ -28,10 +31,9 @@ body {
   }
 }
 
-
 .main-header {
   background-color: var(--primary-color);
-  color: var(--text-color);
+  color: var(--white);
   padding: 4rem 0;
   min-height: 1vh;
 
@@ -49,5 +51,10 @@ body {
 
 .main-footer {
   background-color: var(--primary-color);
-  color: var(--text-color);
+  color: var(--white);
+
+  .title {
+    color: var(--white);
+    opacity: 0.9;
+  }
 }
