@@ -1,8 +1,29 @@
 {% include './_reset.css' %}
 {% include './_normalize.css' %}
 
+:root {
+  --primary-color: #e30a17;
+  --text-color: white;
+}
+
+html {
+  font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+}
+
 .main-header {
-  h1 {
-    color: red
-  }
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 1rem;
+}
+
+.main-header .title {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.main-header .quote {
+  font-size: 1.5rem;
+  text-wrap: balance;
 }
