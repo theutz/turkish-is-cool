@@ -1,0 +1,19 @@
+<!--
+    templateType: global_partial
+    isAvailableForNewContent: false
+-->
+<!-- Begin partial -->
+<footer class="main-footer">
+  <h2 class="title">
+    {% module "title" label="Title" path="@hubspot/text" value="Site title" %}
+  </h2>
+
+  <div class="copyright">
+    {% module_block module "copyright" label="Copyright text" path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        &copy; Today by us
+      {% end_module_attribute %}
+    {% end_module_block %}
+  </div>
+</footer>
+<!-- End partial -->
