@@ -22,8 +22,8 @@ upload:
 alias u := upload
 
 # fetch the latest files from hubspot
-fetch:
-  pnpm exec hs fetch {{dest}} {{source}}
+fetch *args:
+  pnpm exec hs fetch {{dest}} {{source}} {{args}}
 
 alias f := fetch
 
