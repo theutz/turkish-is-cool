@@ -55,3 +55,8 @@ create:
   fi
   name="$(gum input --placeholder "Name...")"
   pnpm exec hs create $type $name $dir
+
+# test github actions locally
+act action="push":
+  doppler run -c prd --mount .env -- \
+    act {{action}} --container-architecture linux/amd64 --secret-file=.env
