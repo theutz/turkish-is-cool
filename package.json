@@ -7,6 +7,7 @@
   "author": "Michael Utz <michael@theutz.com>",
   "license": "ISC",
   "devDependencies": {
+    "@dopplerhq/node-sdk": "^1.2.0",
     "@hubspot/api-client": "^10.2.0",
     "@hubspot/cli": "^5.1.0",
     "@types/node": "^20.10.5",

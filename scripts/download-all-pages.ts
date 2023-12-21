@@ -1,6 +1,14 @@
 import { Client } from "@hubspot/api-client"
+import DopplerSDK from '@dopplerhq/node-sdk'
 
-const hubspotClient = new Client({ "accessToken": process.env.HUBSPOT_PRIVATE_APP_TOKEN });
+const dpl = {
+  project: "turkish-is-cool"
+}
+
+const doppler = new DopplerSDK({ accessToken: process.env.DOPPLER_TOKEN });
+const accessToken = (await doppler.secrets.get(dpl.project, "dev", "HUBSPOT_PRIVATE_APP_TOKEN")).value.computed;
+
+const hubspotClient = new Client({ accessToken });
 
 const createdAt = undefined;
 const createdAfter = undefined;

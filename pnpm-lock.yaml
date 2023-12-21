@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@dopplerhq/node-sdk':
+    specifier: ^1.2.0
+    version: 1.2.0
   '@hubspot/api-client':
     specifier: ^10.2.0
     version: 10.2.0
@@ -368,6 +371,10 @@ packages:
     dependencies:
       exec-sh: 0.3.6
       minimist: 1.2.8
+    dev: true
+
+  /@dopplerhq/node-sdk@1.2.0:
+    resolution: {integrity: sha512-UX+Do8WNVsFbDfD/6B8pdqmzHHCeej3IlQyLZUtVgogOY4RNWZtdtt6F45vZzmwj/ZoY+aTxeJldv8Yu6HT5mw==}
     dev: true
 
   /@esbuild/aix-ppc64@0.19.10:
