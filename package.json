@@ -8,6 +8,10 @@
   "license": "ISC",
   "devDependencies": {
     "@hubspot/api-client": "^10.2.0",
-    "@hubspot/cli": "^5.1.0"
+    "@hubspot/cli": "^5.1.0",
+    "@types/node": "^20.10.5",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3",
+    "vite-node": "^1.1.0"
   }
 }
