@@ -67,4 +67,12 @@ body {
     opacity: 0.8;
     font-size: 1.2rem;
   }
+
+  .emojis {
+    text-align: right;
+    letter-spacing: 0.5rem;
+    text-shadow: 0 0 3px var(--white);
+    filter: drop-shadow(0 0 7px var(--white));
+    font-size: 2rem;
+  }
 }
