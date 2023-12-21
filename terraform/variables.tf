@@ -1,5 +1,5 @@
 variable "doppler_project" {
-  type = string
+  type    = string
   default = "turkish-is-cool"
 }
 
@@ -12,7 +12,6 @@ variable "doppler_environment" {
 }
 
 variable "doppler_token" {
-  type = string
+  type      = string
   sensitive = true
 }
-
