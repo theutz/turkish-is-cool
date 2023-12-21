@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
-  "author": "",
+  "author": "Michael Utz <michael@theutz.com>",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "@hubspot/api-client": "^10.2.0",
     "@hubspot/cli": "^5.1.0"
   }
 }
