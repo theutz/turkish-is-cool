@@ -55,3 +55,7 @@ act action="push":
 tf *args:
   doppler run -c prd --name-transformer tf-var -- \
     terraform -chdir=terraform {{args}}
+
+download-all-pages env="dev":
+  doppler run -c {{env}} -- \
+    pnpm exec vite-node scripts/download-all-pages.ts
