@@ -60,3 +60,8 @@ create:
 act action="push":
   doppler run -c prd --mount .env -- \
     act {{action}} --container-architecture linux/amd64 --secret-file=.env
+
+# run terraform commands with the secrets
+tf *args:
+  doppler run -c prd --name-transformer tf-var -- \
+    terraform -chdir=terraform {{args}}
