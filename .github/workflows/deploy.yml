@@ -13,5 +13,5 @@ jobs:
         with:
           src_dir: src
           dest_dir: turkish-is-cool
-          portal_id: ${{ vars.hubspot_portal_id }}
-          personal_access_key: ${{ secrets.hubspot_personal_access_key }}
+          portal_id: ${{ vars.HUBSPOT_PORTAL_ID }}
+          personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
