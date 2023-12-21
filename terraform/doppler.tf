@@ -1,10 +1,5 @@
-data "doppler_secrets" "prd" {
-  project = doppler_project.this.name
-  config  = doppler_config.prd.name
-}
-
 resource "doppler_project" "this" {
-  name = var.doppler_project
+  name = "turkish-is-cool"
 }
 
 resource "doppler_environment" "prd" {
@@ -17,4 +12,9 @@ resource "doppler_config" "prd" {
   project     = doppler_project.this.name
   environment = doppler_environment.prd.slug
   name        = "prd"
+}
+
+data "doppler_secrets" "prd" {
+  project = doppler_project.this.name
+  config  = doppler_config.prd.name
 }
