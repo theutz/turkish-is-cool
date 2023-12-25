@@ -3,3 +3,17 @@
     isAvailableForNewContent: true
 -->
 {% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{% dnd_area "dnd_area_main" label="Main section" %}
+  {% dnd_section vertical_alignment="TOP" %}
+    {% dnd_module path="@hubspot/rich_text" label="Rich text" %}
+      {% module_attribute "html" %}
+      <h2>Loves ya!</h2>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+{% end_dnd_area %}
+
+{% endblock body %}
