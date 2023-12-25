@@ -59,5 +59,5 @@ tf *args:
 download-all-pages env="dev":
   #!/usr/bin/env zsh
   doppler run -c {{env}} -- \
-      pnpm exec vite-node scripts/download-all-pages.ts \
-    2>/dev/null
+      pnpm exec vite-node scripts/download-all-pages.ts
+    

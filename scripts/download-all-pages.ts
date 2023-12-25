@@ -1,4 +1,5 @@
 import { Client } from "@hubspot/api-client"
+import hubspot from "@hubspot/api-client"
 import DopplerSDK from '@dopplerhq/node-sdk'
 
 const dpl = {
@@ -6,9 +7,11 @@ const dpl = {
 }
 
 const doppler = new DopplerSDK({ accessToken: process.env.DOPPLER_TOKEN });
-const accessToken = (await doppler.secrets.get(dpl.project, "dev", "HUBSPOT_PRIVATE_APP_TOKEN")).value.computed;
+const devAccessToken = (await doppler.secrets.get(dpl.project, "dev", "HUBSPOT_PRIVATE_APP_TOKEN")).value.computed;
+const prdAccessToken = (await doppler.secrets.get(dpl.project, "prd", "HUBSPOT_PRIVATE_APP_TOKEN")).value.computed;
 
-const hubspotClient = new Client({ accessToken });
+const devClient = new Client({ accessToken: devAccessToken });
+const prdClient = new Client({ accessToken: prdAccessToken });
 
 const createdAt = undefined;
 const createdAfter = undefined;
@@ -22,8 +25,10 @@ const limit = undefined;
 const archived = undefined;
 const property = undefined;
 
+let page;
+
 try {
-  const apiResponse = await hubspotClient.cms.pages.sitePagesApi.getPage(
+  const downRes = await devClient.cms.pages.sitePagesApi.getPage(
     createdAt,
     createdAfter,
     createdBefore,
@@ -36,11 +41,19 @@ try {
     archived,
     property
   );
-  console.log(JSON.stringify(apiResponse, null, 2));
-} catch (e: any) {
-  e.message === 'HTTP request failed'
-    ? console.error(JSON.stringify(e.response, null, 2))
-    : console.error(e)
+  page = downRes.results[0];
+} catch (e: Error) {
+  console.error(e.message);
+  process.exit(1)
+}
+
+page.archivedAt = null
+
+try {
+  const upRes = await prdClient.cms.pages.sitePagesApi.create(page)
+} catch (e: Error) {
+  console.error(e)
+  process.exit(1)
 }
 
 export { }
