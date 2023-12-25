@@ -12,8 +12,8 @@ devDependencies:
     specifier: ^10.2.0
     version: 10.2.0
   '@hubspot/cli':
-    specifier: ^5.1.0
-    version: 5.1.0(@types/node@20.10.5)(typescript@5.3.3)(vite@4.5.1)
+    specifier: ^5.1.1
+    version: 5.1.1(@types/node@20.10.5)(typescript@5.3.3)(vite@4.5.1)
   '@types/node':
     specifier: ^20.10.5
     version: 20.10.5
@@ -846,11 +846,11 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@hubspot/cli-lib@7.0.0(@hubspot/local-dev-lib@0.1.0)(@types/node@20.10.5):
-    resolution: {integrity: sha512-JL1K49pB9IUtMtRuSrsp//p132uprWVSiLuaEgx0DCEMZgIaFzcn82mIXLMpFue+/TZrenVmw4X25ABbJCrSGQ==}
+  /@hubspot/cli-lib@8.0.0(@hubspot/local-dev-lib@0.1.0)(@types/node@20.10.5):
+    resolution: {integrity: sha512-IyLShcWhtnXUZXp7mIhnDPf1Euh9Tquwfm/+tOgpP1CSZL/LrMUKXVsuimYySrIxCZaC228w9xqWm7+AoDGflA==}
     engines: {node: '>=10'}
     peerDependencies:
-      '@hubspot/local-dev-lib': ^0.0.8
+      '@hubspot/local-dev-lib': ^0.1.0
     dependencies:
       '@hubspot/local-dev-lib': 0.1.0
       chalk: 2.4.2
@@ -878,14 +878,14 @@ packages:
       - ts-node
     dev: true
 
-  /@hubspot/cli@5.1.0(@types/node@20.10.5)(typescript@5.3.3)(vite@4.5.1):
-    resolution: {integrity: sha512-Nx4q9fRlztXZFwrUK69yFxBfLEcFRGwi4wfVI3ptr62vO5BPDETDFOcOyuG9SckRhsYOwIQ0K7V2Gw1x7HBHfQ==}
+  /@hubspot/cli@5.1.1(@types/node@20.10.5)(typescript@5.3.3)(vite@4.5.1):
+    resolution: {integrity: sha512-NxfwAi6ruYIl2/NuLcHrodiFduKQHJ19sBtj5X3pkOOsjiLVF/ZQZJ4G/yfRqRK4W2SZNgihOsTrZY753enF8Q==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      '@hubspot/cli-lib': 7.0.0(@hubspot/local-dev-lib@0.1.0)(@types/node@20.10.5)
+      '@hubspot/cli-lib': 8.0.0(@hubspot/local-dev-lib@0.1.0)(@types/node@20.10.5)
       '@hubspot/local-dev-lib': 0.1.0
-      '@hubspot/serverless-dev-runtime': 5.1.0(@types/node@20.10.5)
+      '@hubspot/serverless-dev-runtime': 5.1.1(@types/node@20.10.5)
       '@hubspot/ui-extensions-dev-server': 0.8.4(typescript@5.3.3)(vite@4.5.1)
       archiver: 5.3.2
       chalk: 4.1.2
@@ -946,10 +946,10 @@ packages:
       - supports-color
     dev: true
 
-  /@hubspot/serverless-dev-runtime@5.1.0(@types/node@20.10.5):
-    resolution: {integrity: sha512-lSy/BIOql5NVpEuGqF+jv7AtLD1rn0zFv0AFgbQ6Zu4PvQLgvkD+xbk+AR5Yd1O1sATy12pd33WyOy/WU898cw==}
+  /@hubspot/serverless-dev-runtime@5.1.1(@types/node@20.10.5):
+    resolution: {integrity: sha512-4T9OCPxD2fTn0dKJPEEiC2h1fbhniUTO44M/nEFaNb3z2Zq/Ov5CX9QQ/2VPsW9/SNqSGH+UayNUfTTN4zmqZA==}
     dependencies:
-      '@hubspot/cli-lib': 7.0.0(@hubspot/local-dev-lib@0.1.0)(@types/node@20.10.5)
+      '@hubspot/cli-lib': 8.0.0(@hubspot/local-dev-lib@0.1.0)(@types/node@20.10.5)
       '@hubspot/local-dev-lib': 0.1.0
       body-parser: 1.20.2
       chalk: 4.1.2
