@@ -9,15 +9,13 @@
       {% module "header_title" path="@hubspot/text" label="Title" value="Turkish is cool!" %}
     </h1>
 
-    <p class="quote">
-      {% module_block module "header_quote" path="@hubspot/text" label="Quote" %}
-        {% module_attribute "value" %}
-          Unleash the thrill of Turkish! Unlike English, Turkish lets you build
-          words like puzzles, creating sentences that are truly a unique
-          language journey. Join the adventure today!
-        {% end_module_attribute %}
-      {% end_module_block %}
-    </p>
+    {% module_block module "header_quote" path="@hubspot/rich_text" label="Quote" %}
+      {% module_attribute "html" %}
+        <p class="quote">
+          Unleash the thrill of Turkish! Unlike English, Turkish lets you build words like puzzles, creating sentences that are truly a unique language journey. Join the adventure today!
+        </p>
+      {% end_module_attribute %}
+    {% end_module_block %}
   </div>
 </header>
 <!-- End partial -->

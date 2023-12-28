@@ -72,20 +72,21 @@ p {
 
 .main-header,
 .main-footer {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 1rem;
 
   @media (min-width: 900px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 2rem 1rem;
   }
 }
 
 .main-header {
   background-color: var(--primary-color);
   color: var(--white);
+  display: flex;
+  flex-direction: column;
 
   .title {
+    margin: 0 0 2rem;
     font-weight: bold;
   }
 
@@ -105,6 +106,7 @@ p {
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
+    align-items: center;
   }
 
   .title {
