@@ -1,20 +1,24 @@
 <!-- module html  -->
-<div class="example">
-  <div class="heading">
-    <div>
-      English
+<div class="examples">
+  {% for example in module.examples %}
+    <div class="example">
+      <div class="heading">
+        <div>
+          English
+        </div>
+        <div>
+          Turkish
+        </div>
+      </div>
+      <dl class="entry">
+        <dd>{{ example.english }}</dd>
+        <dt>{{ example.turkish }}</dt>
+      </dl>
+      {% if example.explanation %}
+        <div class="explanation">
+          {{ example.explanation }}
+        </div>
+      {% endif %}
     </div>
-    <div>
-      Turkish
-    </div>
-  </div>
-  <dl class="entry">
-    <dd>{{ module.english }}</dd>
-    <dt>{{ module.turkish }}</dt>
-  </dl>
-  {% if module.explanation %}
-    <div class="explanation">
-      {{ module.explanation }}
-    </div>
-  {% endif %}
+  {% endfor %}
 </div>

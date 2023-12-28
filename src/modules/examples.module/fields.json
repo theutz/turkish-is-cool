@@ -1,10 +1,50 @@
 [ {
-  "id" : "527ef504-67b6-44f5-da24-2c6915aa888a",
-  "name" : "explanation",
+  "id" : "4761d3c0-0f39-22b0-2c22-e1621bc90652",
+  "name" : "examples",
   "display_width" : null,
-  "label" : "Rich text",
+  "label" : "Examples",
   "required" : false,
   "locked" : false,
-  "type" : "richtext",
-  "default" : "A brief explanation of the differences."
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "c83752e4-761d-d749-5d6b-cf10c198f4f9",
+    "name" : "english",
+    "display_width" : null,
+    "label" : "English",
+    "required" : true,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Hello"
+  }, {
+    "id" : "509e87e1-e43f-b176-3723-2805e3261da1",
+    "name" : "turkish",
+    "display_width" : null,
+    "label" : "Turkish",
+    "required" : true,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Merhaba"
+  }, {
+    "id" : "527ef504-67b6-44f5-da24-2c6915aa888a",
+    "name" : "explanation",
+    "display_width" : null,
+    "label" : "Explanation",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "A brief explanation of the differences."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "english" : "Hello",
+    "turkish" : "Merhaba",
+    "explanation" : "A brief explanation of the differences."
+  } ]
 } ]
