@@ -3,16 +3,20 @@
   {% for example in module.examples %}
     <div class="example">
       <div class="heading">
-        <div>
+        <div class="english">
           English
         </div>
-        <div>
+        <div class="turkish">
           Turkish
         </div>
       </div>
       <dl class="entry">
-        <dd>{{ example.english }}</dd>
-        <dt>{{ example.turkish }}</dt>
+        <dd class="english">
+          {{ example.english }}
+        </dd>
+        <dt class="turkish">
+          {{ example.turkish }}
+        </dt>
       </dl>
       {% if example.explanation %}
         <div class="explanation">

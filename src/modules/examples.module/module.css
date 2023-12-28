@@ -1,22 +1,49 @@
-.example {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  
-  .heading, .entry {
-    display: contents;
-  }
-  
-  .heading {
-    font-weight: bold;
-  }
-  
-  .entry {
-    dd, dt {
-      margin: 0;
-    }  
-  }
-  
-  .explanation {
-    grid-column: 1 / span 2;
+.examples {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  .example {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-areas:
+      "a b"
+      "c d"
+      "e e";
+    gap: 1.5rem;
+
+    .heading,
+    .entry {
+      display: contents;
+    }
+
+    .heading {
+      font-weight: bold;
+      .english {
+        grid-area: a;
+      }
+
+      .turkish {
+        grid-area: b;
+      }
+    }
+
+    .entry {
+      .turkish, .english {
+        margin: 0;
+      }
+
+      .turkish {
+        grid-area: c;
+      }
+      .english {
+        grid-area: d;
+      }
+    }
+
+    .explanation {
+      grid-area: e;
+    }
   }
 }
