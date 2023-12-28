@@ -1,16 +1,16 @@
 <!-- module html  -->
 <div class="example">
   <div class="heading">
-    <div>
+    <div class="english">
       English
     </div>
-    <div>
+    <div class="turkish">
       Turkish
     </div>
   </div>
   <dl class="entry">
-    <dd>{{ module.english }}</dd>
-    <dt>{{ module.turkish }}</dt>
+    <dt class="english">{{ module.english }}</dt>
+    <dd class="turkish">{{ module.turkish }}</dd>
   </dl>
   {% if module.explanation %}
     <div class="explanation">
