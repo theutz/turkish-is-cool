@@ -22,42 +22,49 @@ body {
   background-color: var(--white);
 }
 
-h1 {
-  font-size: 6rem;
-  font-weight: 300;
-  letter-spacing: -1.5px;
-}
+.hs_cos_wrapper_type_rich_text {
+  h1 {
+    font-size: 6rem;
+    font-weight: 300;
+    letter-spacing: -1.5px;
+  }
 
-h2 {
-  font-size: 3.75rem;
-  font-weight: 300;
-  letter-spacing: -0.5px;
-}
+  h2 {
+    font-size: 3.75rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+  }
 
-h3 {
-  font-size: 3rem;
-}
+  h3 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
 
-h4 {
-  font-size: 2.125rem;
-  letter-spacing: 0.25px;
-}
+  h4 {
+    font-size: 2.125rem;
+    letter-spacing: 0.25px;
+  }
 
-h5 {
-  font-size: 1.5rem;
-}
+  h5 {
+    font-size: 1.5rem;
+  }
 
-h6 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 0.15px;
-}
+  h6 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.15px;
+  }
 
-p {
-  margin-top: 1rem;
+  p {
+    font-size: var(--font-size-400);
+    line-height: 1.4;
+    margin-top: 1rem;
 
-  &:not(:last) {
-    margin-bottom: 1rem;
+    &:not(:last) {
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -88,11 +95,12 @@ p {
   .title {
     margin: 0 0 2rem;
     font-weight: bold;
+    font-size: 6rem;
   }
 
   .quote {
     font-size: var(--font-size-600);
-    text-wrap: balance;
+    text-wrap: pretty;
     line-height: 1.3;
   }
 }
