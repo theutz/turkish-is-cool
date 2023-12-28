@@ -25,13 +25,13 @@ body {
 h1 {
   font-size: 6rem;
   font-weight: 300;
-  letter-spacing: -1.5;
+  letter-spacing: -1.5px;
 }
 
 h2 {
   font-size: 3.75rem;
   font-weight: 300;
-  letter-spacing: -0.5;
+  letter-spacing: -0.5px;
 }
 
 h3 {
@@ -40,7 +40,7 @@ h3 {
 
 h4 {
   font-size: 2.125rem;
-  letter-spacing: 0.25;
+  letter-spacing: 0.25px;
 }
 
 h5 {
@@ -50,7 +50,7 @@ h5 {
 h6 {
   font-size: 1.25rem;
   font-weight: 600;
-  letter-spacing: 0.15;
+  letter-spacing: 0.15px;
 }
 
 p {
