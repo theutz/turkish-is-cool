@@ -1,7 +1,7 @@
 .examples {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 
   .example {
     display: grid;
@@ -24,11 +24,11 @@
       font-size: var(--font-size-200);
 
       .english {
-        grid-area: a;
+        grid-area: b;
       }
 
       .turkish {
-        grid-area: b;
+        grid-area: a;
       }
     }
 
@@ -40,11 +40,11 @@
       }
 
       .english {
-        grid-area: c;
+        grid-area: d;
       }
 
       .turkish {
-        grid-area: d;
+        grid-area: c;
       }
     }
 
