@@ -1,10 +1,19 @@
 [ {
-  "id" : "text",
-  "name" : "text",
+  "id" : "46e24700-66f7-1dc0-e2bd-8d3f14ee66cc",
+  "name" : "english",
   "display_width" : null,
-  "label" : "Rich text field",
-  "required" : false,
+  "label" : "Rich text",
+  "required" : true,
   "locked" : false,
   "type" : "richtext",
-  "default" : "<h1>Hello, world!</h1>"
+  "default" : "<p>Hello</p>"
+}, {
+  "id" : "text",
+  "name" : "turkish",
+  "display_width" : null,
+  "label" : "Rich text field",
+  "required" : true,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Merhaba</p>"
 } ]

@@ -1,0 +1,18 @@
+.example {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  
+  .heading, .entry {
+    display: contents;
+  }
+  
+  .heading {
+    font-weight: bold;
+  }
+  
+  .entry {
+    dd, dt {
+      margin: 0;
+    }  
+  }
+}
