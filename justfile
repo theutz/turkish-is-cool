@@ -37,12 +37,17 @@ create:
   )
   type="$(gum choose $types)"
   dir="{{justfile_directory()}}/src"
-  if [[ $type == "template" ]]; then
-    dir="$dir/templates"
-    if gum confirm "Is this a partial?"; then
-      dir="$dir/partials"
-    fi
-  fi
+  case $type in
+    template)
+      dir="$dir/templates"
+      if gum confirm "Is this a partial?"; then
+        dir="$dir/partials"
+      fi
+      ;;
+    module)
+      dir="$dir/modules"
+      ;;
+  esac
   name="$(gum input --placeholder "Name...")"
   pnpm exec hs create $type $name $dir
 
