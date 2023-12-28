@@ -20,6 +20,10 @@
 
     .heading {
       font-weight: bold;
+      text-transform: uppercase;
+      color: var(--primary-color);
+      font-size: var(--font-size-200);
+
       .english {
         grid-area: a;
       }
@@ -30,6 +34,8 @@
     }
 
     .entry {
+      font-size: var(--font-size-600, 1.5rem);
+
       .turkish, .english {
         margin: 0;
       }
