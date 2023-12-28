@@ -18,7 +18,7 @@
     }
 
     .heading {
-      font-weight: bold;
+      font-weight: 500;
       text-transform: uppercase;
       color: var(--primary-color);
       font-size: var(--font-size-200);
@@ -51,6 +51,8 @@
     .explanation {
       grid-area: e;
       align-self: center;
+      text-wrap: balance;
+      filter: brightness(3);
     }
   }
 }
