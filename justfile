@@ -30,7 +30,8 @@ fetch-force:
   pnpm exec hs fetch {{dest}} {{source}} --overwrite
 
 # fetch and then upload files to/from hubspot
-sync: fetch-force upload-clean
+sync: && fetch-force upload-clean
+  gum confirm "Did you publish all the changes to your modules?"
 
 # remove a file from the remote PATH
 remove path:
