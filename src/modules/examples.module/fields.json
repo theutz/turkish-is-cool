@@ -1,0 +1,10 @@
+[ {
+  "id" : "527ef504-67b6-44f5-da24-2c6915aa888a",
+  "name" : "explanation",
+  "display_width" : null,
+  "label" : "Rich text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "A brief explanation of the differences."
+} ]
