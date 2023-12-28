@@ -1,6 +1,6 @@
 [private]
 default:
-  just --list
+  just --choose
 
 # run commands against hubspot cli with ARGS
 hs *args:
