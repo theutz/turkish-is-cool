@@ -15,4 +15,8 @@
       margin: 0;
     }  
   }
+  
+  .explanation {
+    grid-column: 1 / span 2;
+  }
 }

@@ -12,4 +12,9 @@
     <dd>{{ module.english }}</dd>
     <dt>{{ module.turkish }}</dt>
   </dl>
+  {% if module.explanation %}
+    <div class="explanation">
+      {{ module.explanation }}
+    </div>
+  {% endif %}
 </div>
