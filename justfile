@@ -17,12 +17,20 @@ watch:
 upload:
   pnpm exec hs upload --src {{source}} --dest {{dest}}
 
+# upload local files and delete remote files when not present
+upload-clean:
+  pnpm exec hs upload --src {{source}} --dest {{dest}} --clean --force
+
 # fetch the latest files from hubspot
-fetch *args:
-  pnpm exec hs fetch {{dest}} {{source}} {{args}}
+fetch:
+  pnpm exec hs fetch {{dest}} {{source}}
+
+# fetch and overwrite
+fetch-force:
+  pnpm exec hs fetch {{dest}} {{source}} --overwrite
 
 # fetch and then upload files to/from hubspot
-sync: fetch upload
+sync: fetch-force upload-clean
 
 # remove a file from the remote PATH
 remove path:
