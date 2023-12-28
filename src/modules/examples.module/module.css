@@ -1,20 +1,19 @@
 .examples {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 
   .example {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-rows: auto 1fr 1fr;
     grid-template-areas:
       "a b"
       "c d"
       "e e";
-    gap: 1.5rem;
+    gap: 1rem;
 
-    .heading,
-    .entry {
+    .heading, .entry {
       display: contents;
     }
 
@@ -40,16 +39,18 @@
         margin: 0;
       }
 
-      .turkish {
+      .english {
         grid-area: c;
       }
-      .english {
+
+      .turkish {
         grid-area: d;
       }
     }
 
     .explanation {
       grid-area: e;
+      align-self: center;
     }
   }
 }

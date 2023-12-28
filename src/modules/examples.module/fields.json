@@ -34,7 +34,7 @@
     "name" : "explanation",
     "display_width" : null,
     "label" : "Explanation",
-    "required" : false,
+    "required" : true,
     "locked" : false,
     "type" : "richtext",
     "default" : "A brief explanation of the differences."
