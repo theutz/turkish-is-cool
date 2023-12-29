@@ -2,10 +2,7 @@ import { Client } from "@hubspot/api-client"
 import DopplerSDK from '@dopplerhq/node-sdk'
 import { Page } from "@hubspot/api-client/lib/codegen/cms/pages";
 import { writeFile } from 'fs/promises'
-
-const dpl = {
-  project: "turkish-is-cool"
-}
+import { dpl, pagesDumpFile } from './utils/const'
 
 const doppler = new DopplerSDK({ accessToken: process.env.DOPPLER_TOKEN });
 const devAccessToken = (await doppler.secrets.get(dpl.project, "dev", "HUBSPOT_PRIVATE_APP_TOKEN")).value.computed;
@@ -26,9 +23,12 @@ const limit = undefined;
 const archived = undefined;
 const property = undefined;
 
-let page: Page;
+let pages: Array<Page>;
 
 try {
+  let msg = "Downloading pages from HubSpot..."
+  console.log(msg)
+
   const downRes = await devClient.cms.pages.sitePagesApi.getPage(
     createdAt,
     createdAfter,
@@ -42,7 +42,11 @@ try {
     archived,
     property
   );
-  page = downRes.results[0];
+
+  console.log(`${msg}DONE`)
+  console.log(`Total pages downloaded: ${downRes.total}`)
+
+  pages = downRes.results;
 } catch (e: unknown) {
   if (e instanceof Error) {
     console.error(e.message)
@@ -53,8 +57,13 @@ try {
 }
 
 try {
-  const json = JSON.stringify(page);
-  await writeFile("pages.json", json)
+  let msg = `Writing pages to ${pagesDumpFile}...`
+  console.log(msg)
+
+  const json = JSON.stringify(pages);
+  await writeFile(pagesDumpFile, json)
+
+  console.log(`${msg}DONE`)
 } catch (e: unknown) {
   if (e instanceof Error) {
     console.error(e.message)
