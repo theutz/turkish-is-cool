@@ -2,11 +2,12 @@
     templateType: global_partial
     isAvailableForNewContent: false
 -->
+{% include "./vars.html" %}
 <!-- Begin partial -->
 <header class="main-header">
   <div class="container-fluid">
     <h1 class="title">
-      {% module "header_title" path="@hubspot/text" label="Title" value="Turkish is cool!" %}
+      {% module "header_title" path="@hubspot/text" label="Title" value={{get_global("site_title")}} %}
     </h1>
 
     {% module_block module "header_quote" path="@hubspot/rich_text" label="Quote" %}

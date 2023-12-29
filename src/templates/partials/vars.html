@@ -1,0 +1,9 @@
+<!--
+templateType: none
+-->
+{% set globals=hubdb_table_rows("globals") %}
+{% macro get_global(name) -%}
+  {{ globals|selectattr("name", "equalto", name)|first|attr("value") }}
+{%- endmacro %}
+
+{% set site_title=get_global("site_title") %}
