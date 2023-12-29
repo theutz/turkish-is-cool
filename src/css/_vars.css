@@ -3,6 +3,7 @@
   --white: {{ theme.global_colors.white.color }};
   --black: {{ theme.global_colors.black.color }};
   --max-width: 1200px;
+  --font-family: {{ theme.font.font }};
   --font-size-900: 6rem;
   --font-size-800: 3.75rem;
   --font-size-700: 3rem;

@@ -51,8 +51,8 @@
     .explanation {
       grid-area: e;
       align-self: center;
-      text-wrap: balance;
-      filter: brightness(3);
+      text-wrap: pretty;
+      line-height: 1.5;
     }
   }
 }

@@ -62,5 +62,28 @@
         }
       }
     ]
+  },
+  {
+    "name" : "font",
+    "label" : "Font",
+    "required" : false,
+    "locked" : false,
+    "load_external_fonts" : true,
+    "type" : "font",
+    "default" : {
+      "size" : 16,
+      "font": "Georgia",
+      "font_set": "GOOGLE",
+      "size_unit" : "px",
+      "color" : "#222222",
+      "styles" : { }
+    },
+    "visibility" : {
+      "hidden_subfields" : {
+        "size": true,
+        "color": true,
+        "styles": true
+      }
+    }
   }
 ]
