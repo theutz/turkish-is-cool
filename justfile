@@ -70,8 +70,12 @@ tf *args:
   doppler run -c prd --name-transformer tf-var -- \
     terraform -chdir=terraform {{args}}
 
-download-all-pages env="dev":
+download-pages env="dev":
   #!/usr/bin/env zsh
   doppler run -c {{env}} -- \
-      pnpm exec vite-node scripts/download-all-pages.ts
+    pnpm exec vite-node scripts/download-pages.ts
     
+upload-pages env="dev":
+  #!/usr/bin/env zsh
+  doppler run -c {{env}} -- \
+    pnpm exec vite-node scripts/upload-pages.ts

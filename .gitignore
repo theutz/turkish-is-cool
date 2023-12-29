@@ -3,3 +3,4 @@ node_modules
 # HubSpot config file
 hubspot.config.yml
 .terraform
+pages.json
