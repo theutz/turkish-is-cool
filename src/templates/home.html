@@ -6,7 +6,7 @@
 
 {% block body %}
 
-<section class="container">
+<div class="container">
   {% dnd_area "dnd_area_main" label="Main section" padding={"left": "1rem"} %}
     {% dnd_section label="Introduction" vertical_alignment="MIDDLE" padding={"top": "4rem", "bottom": "4rem"} %}
       {% dnd_column %}
@@ -38,6 +38,6 @@
       ]
     } %}
   {% end_dnd_area %}
-</section>
+</div>
 
 {% endblock body %}
