@@ -1,0 +1,66 @@
+[
+  {
+    "label": "Global colors",
+    "name": "global_colors",
+    "type": "group",
+    "children": [
+      {
+        "label": "Primary",
+        "name": "primary",
+        "type": "color",
+        "alternate_names": [
+          "primary_color"
+        ],
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brand_settings.primaryColor"
+          }
+        },
+        "default": {
+          "color": "#e30a17"
+        }
+      },
+      {
+        "label": "White",
+        "name": "white",
+        "type": "color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brand_settings.colors[1]"
+          }
+        },
+        "default": {
+          "color": "#ffffff"
+        }
+      },
+      {
+        "label": "Black",
+        "name": "black",
+        "type": "color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brand_settings.colors[2]"
+          }
+        },
+        "default": {
+          "color": "#000000"
+        }
+      }
+    ]
+  }
+]

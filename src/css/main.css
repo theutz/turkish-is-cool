@@ -14,5 +14,6 @@
  * Site CSS
  */
 
+{% include './_vars.css' %}
 {% include './_site.css' %}
 
