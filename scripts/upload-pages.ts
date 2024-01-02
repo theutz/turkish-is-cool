@@ -18,17 +18,32 @@ try {
   const data = await readFile(pagesDumpFile, { encoding: 'utf8' })
   const pages = ((await JSON.parse(data)) as Page[])
 
-  const toUpdate = []
-  const toCreate = []
+  const toUpdate: Page[] = []
+  const toCreate: Page[] = []
 
   for (const page of pages) {
+    // @ts-ignore the update/create endpoint doesn't expect this to exist, apparently
     page.archivedAt = null
     page.publishDate = new Date(page.publishDate)
+    const existing = await getPageBySlug(client, page.slug)
+    if (!!existing) {
+      page.id = existing.id
+      console.log(`${page.slug} exists. Updating.`)
+      toUpdate.push(page)
+    } else {
+      console.log(`${page.slug} doesn't exist. Creating.`)
+      toCreate.push(page)
+    }
   }
 
-  console.log(`Uploading pages to HubSpot env: ${env}`)
-  const res = await client.cms.pages.sitePagesApi.createBatch({ inputs: pages })
-  console.log(res)
+  console.log(`Creating and updating pages in ${env}`)
+  const create = client.cms.pages.sitePagesApi.createBatch({ inputs: toCreate })
+  const update = client.cms.pages.sitePagesApi.updateBatch({ inputs: toUpdate })
+  const responses = await Promise.all([create, update])
+
+  for (const res of responses) {
+    console.log(res)
+  }
 } catch (e) {
   if (e instanceof Error) {
     console.error(e.message)
