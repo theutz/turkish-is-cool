@@ -1,5 +1,5 @@
 import { Client } from "@hubspot/api-client"
-import { getSecret } from "../utils/doppler";
+import { getSecret } from "../utils/doppler.ts";
 
 type Envs = "dev" | "prd";
 

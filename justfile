@@ -75,7 +75,7 @@ download-pages env="dev":
   doppler run -c {{env}} -- \
     pnpm exec vite-node scripts/download-pages.ts {{env}}
     
-upload-pages env="dev":
+upload-pages env="prd":
   #!/usr/bin/env zsh
   doppler run -c {{env}} -- \
-    pnpm exec vite-node scripts/upload-pages.ts
+    pnpm exec vite-node scripts/upload-pages.ts {{env}}

@@ -1,7 +1,7 @@
 import { writeFile } from 'fs/promises'
 import { pagesDumpFile } from './utils/const'
-import { makeClient, isEnv } from "./utils/hubspotClient.ts";
-import { getPage } from './utils/getPage.ts';
+import { makeClient, isEnv } from "./hubspot/client.ts";
+import { getPage } from './hubspot/getPage.ts';
 
 try {
   const env = process.argv[2]
