@@ -1,19 +1,9 @@
-import { Client } from "@hubspot/api-client"
 import { Page } from "@hubspot/api-client/lib/codegen/cms/pages";
 import { writeFile } from 'fs/promises'
 import { pagesDumpFile } from './utils/const'
-import { getSecret } from "./utils/doppler";
+import { makeClient as makeHubspotClient } from "./utils/hubspot";
 
-const devAccessToken = await getSecret("dev", "HUBSPOT_PRIVATE_APP_TOKEN")
-// const prdAccessToken = (await doppler.secrets.get(dpl.project, "prd", "HUBSPOT_PRIVATE_APP_TOKEN")).value.computed;
-
-if (!devAccessToken) {
-  console.error("HubSpot access token not found.")
-  process.exit(1)
-}
-
-const devClient = new Client({ accessToken: devAccessToken });
-// const prdClient = new Client({ accessToken: prdAccessToken });
+const devClient = await makeHubspotClient("dev")
 
 const createdAt = undefined;
 const createdAfter = undefined;
