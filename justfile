@@ -73,7 +73,7 @@ tf *args:
 download-pages env="dev":
   #!/usr/bin/env zsh
   doppler run -c {{env}} -- \
-    pnpm exec vite-node scripts/download-pages.ts
+    pnpm exec vite-node scripts/download-pages.ts {{env}}
     
 upload-pages env="dev":
   #!/usr/bin/env zsh

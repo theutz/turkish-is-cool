@@ -1,9 +1,14 @@
 import { writeFile } from 'fs/promises'
 import { pagesDumpFile } from './utils/const'
-import { makeClient } from "./utils/hubspotClient.ts";
+import { makeClient, isEnv } from "./utils/hubspotClient.ts";
 
 try {
-  const client = await makeClient("dev")
+  const env = process.argv[2]
+  if (!isEnv(env)) {
+    console.error("Positional argument required: env")
+    process.exit(1)
+  }
+  const client = await makeClient(env)
 
   console.log("Downloading pages from HubSpot...")
   const res = await client.cms.pages.sitePagesApi.getPage();
