@@ -1,44 +1,22 @@
-import { Page } from "@hubspot/api-client/lib/codegen/cms/pages";
 import { writeFile } from 'fs/promises'
 import { pagesDumpFile } from './utils/const'
-import { makeClient as makeHubspotClient } from "./utils/hubspotClient.ts";
-
-const devClient = await makeHubspotClient("dev")
-
-let pages: Array<Page>;
+import { makeClient } from "./utils/hubspotClient.ts";
 
 try {
-  let msg = "Downloading pages from HubSpot..."
-  console.log(msg)
+  const client = await makeClient("dev")
 
-  const res = await devClient.cms.pages.sitePagesApi.getPage();
-
-  console.log(`${msg}DONE`)
+  console.log("Downloading pages from HubSpot...")
+  const res = await client.cms.pages.sitePagesApi.getPage();
   console.log(`Total pages downloaded: ${res.total}`)
 
-  pages = res.results;
+  console.log(`Writing results to ${pagesDumpFile}`)
+  await writeFile(pagesDumpFile, JSON.stringify(res.results))
+  console.log("DONE")
 } catch (e: unknown) {
   if (e instanceof Error) {
     console.error(e.message)
   } else {
     console.error(e);
-  }
-  process.exit(1)
-}
-
-try {
-  let msg = `Writing pages to ${pagesDumpFile}...`
-  console.log(msg)
-
-  const json = JSON.stringify(pages);
-  await writeFile(pagesDumpFile, json)
-
-  console.log(`${msg}DONE`)
-} catch (e: unknown) {
-  if (e instanceof Error) {
-    console.error(e.message)
-  } else {
-    console.error(e)
   }
   process.exit(1)
 }
