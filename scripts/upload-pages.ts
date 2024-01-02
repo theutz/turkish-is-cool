@@ -28,10 +28,10 @@ try {
     const existing = await getPageBySlug(client, page.slug)
     if (!!existing) {
       page.id = existing.id
-      console.log(`${page.slug} exists. Updating.`)
+      console.log(`"${page.slug}" exists. Updating.`)
       toUpdate.push(page)
     } else {
-      console.log(`${page.slug} doesn't exist. Creating.`)
+      console.log(`"${page.slug}" doesn't exist. Creating.`)
       toCreate.push(page)
     }
   }
@@ -39,11 +39,8 @@ try {
   console.log(`Creating and updating pages in ${env}`)
   const create = client.cms.pages.sitePagesApi.createBatch({ inputs: toCreate })
   const update = client.cms.pages.sitePagesApi.updateBatch({ inputs: toUpdate })
-  const responses = await Promise.all([create, update])
-
-  for (const res of responses) {
-    console.log(res)
-  }
+  await Promise.all([create, update])
+  console.log("DONE")
 } catch (e) {
   if (e instanceof Error) {
     console.error(e.message)

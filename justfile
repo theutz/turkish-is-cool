@@ -71,11 +71,11 @@ tf *args:
     terraform -chdir=terraform {{args}}
 
 download-pages env="dev":
-  #!/usr/bin/env zsh
   doppler run -c {{env}} -- \
     pnpm exec vite-node scripts/download-pages.ts {{env}}
     
 upload-pages env="prd":
-  #!/usr/bin/env zsh
   doppler run -c {{env}} -- \
     pnpm exec vite-node scripts/upload-pages.ts {{env}}
+
+promote-pages: (download-pages "dev") (upload-pages "prd")
