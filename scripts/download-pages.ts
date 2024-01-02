@@ -1,12 +1,16 @@
 import { Client } from "@hubspot/api-client"
-import DopplerSDK from '@dopplerhq/node-sdk'
 import { Page } from "@hubspot/api-client/lib/codegen/cms/pages";
 import { writeFile } from 'fs/promises'
-import { dpl, pagesDumpFile } from './utils/const'
+import { pagesDumpFile } from './utils/const'
+import { getSecret } from "./utils/doppler";
 
-const doppler = new DopplerSDK({ accessToken: process.env.DOPPLER_TOKEN });
-const devAccessToken = (await doppler.secrets.get(dpl.project, "dev", "HUBSPOT_PRIVATE_APP_TOKEN")).value.computed;
+const devAccessToken = await getSecret("dev", "HUBSPOT_PRIVATE_APP_TOKEN")
 // const prdAccessToken = (await doppler.secrets.get(dpl.project, "prd", "HUBSPOT_PRIVATE_APP_TOKEN")).value.computed;
+
+if (!devAccessToken) {
+  console.error("HubSpot access token not found.")
+  process.exit(1)
+}
 
 const devClient = new Client({ accessToken: devAccessToken });
 // const prdClient = new Client({ accessToken: prdAccessToken });
